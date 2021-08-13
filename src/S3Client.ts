@@ -38,7 +38,7 @@ class S3Client {
       );
       fd.append("file", file);
 
-      const data = await fetch(url, { method: "post", body: fd });
+      const data = await fetch(url, { method: "PUT", body: fd });
       if (!data.ok) return Promise.reject(data);
       return Promise.resolve({
         bucket: this.config.bucketName,
